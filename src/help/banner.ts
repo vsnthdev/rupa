@@ -5,20 +5,20 @@
 
 import chalk from 'chalk'
 import { Command } from 'commander'
+import WrapAnsi from 'wrap-ansi'
 
 import { RupaOptions } from '../options/schema'
 
-const arrayToChalk = (str: string, styles: string[]) => {
-    let style = chalk
-    for (const name of styles.reverse()) style = style[name]
-    return style(str)
+interface BannerArgs {
+    cmd: Command
+    options: RupaOptions
+    helpers: any
+    pkg: any
 }
 
-export default (cmd: Command, options: RupaOptions): string => {
-    const dop = (str: string) => `[${str}]`
-    const dre = (str: string) => `<${str}>`
-    const cp = ` `.repeat(options.config.indent.content)
-    const sp = ` `.repeat(options.config.indent.subContent)
+export default ({ cmd, options, helpers, pkg }: BannerArgs): string => {
+    // pull the helpers we need to render this block
+    const { dop, dre, cp, sp, arrayToChalk } = helpers
 
     const cmdWrap =
         Boolean((options.program as any)._actionHandler) == false &&
@@ -26,16 +26,27 @@ export default (cmd: Command, options: RupaOptions): string => {
             ? dre
             : dop
 
-    // TODO: pull descriptors from package.json
+    // pull descriptors from package.json
     // make sure it it's width is limited
-    const desc = (options.program as any)._description
+    const desc = WrapAnsi(
+        (options.program as any)._description || pkg.description,
+        60,
+    )
+        .split('\n')
+        .map(line => `${sp}${line}`)
+        .join('\n')
 
-    return `\n${cp}`
+    // render the header text
+    let render = `\n${cp}`
         .concat(arrayToChalk('USAGE', options.config.colors.heading))
         .concat(
             `\n${sp}${options.program.name()} ${cmdWrap(
                 arrayToChalk('command', options.config.colors.command),
             )} ${dop(arrayToChalk('options', options.config.colors.arg))}\n`,
         )
-        .concat(`\n${sp}${desc}\n`)
+
+    // render the description only if there is one
+    if (desc.length > 0) render = render.concat(`\n${desc}\n`)
+
+    return render
 }

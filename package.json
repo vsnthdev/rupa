@@ -24,7 +24,9 @@
     "dependencies": {
         "chalk": "^4.1.1",
         "deepmerge": "^4.2.2",
-        "joi": "^17.4.1"
+        "joi": "^17.4.1",
+        "read-pkg-up": "^3.0.0",
+        "wrap-ansi": "^8.0.0"
     },
     "peerDependencies": {
         "commander": "8.x"
