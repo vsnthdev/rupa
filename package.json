@@ -18,7 +18,7 @@
     },
     "scripts": {
         "dev": "tsc --watch",
-        "build": "rm -rf tsconfig.tsbuildinfo dist/ && tsc"
+        "build": "rimraf ./dist && tsc --incremental false"
     },
     "keywords": [],
     "dependencies": {
@@ -42,6 +42,7 @@
         "eslint-plugin-prettier": "^3.4.0",
         "eslint-plugin-simple-import-sort": "^7.0.0",
         "prettier": "^2.3.2",
+        "rimraf": "^3.0.2",
         "typescript": "^4.3.5"
     }
 }

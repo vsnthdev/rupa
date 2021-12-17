@@ -23,5 +23,5 @@ export default (cmd: Command, options: RupaOptions, pkg: any): string => {
         },
     }
 
-    return banner(cmd, options, pkg)
+    return banner({ cmd, helpers, options, pkg })
 }
