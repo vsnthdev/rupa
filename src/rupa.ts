@@ -4,7 +4,7 @@
  */
 
 import { Command } from 'commander'
-import readPkgUp from 'read-pkg-up'
+import { readPackageUp } from 'read-pkg-up'
 
 import help from './help/index.js'
 import fillOptions from './options/index.js'
@@ -15,11 +15,11 @@ export default async (options: RupaOptions): Promise<Command> => {
     options = await fillOptions(options)
 
     // read the package.json information of the dependent
-    const { pkg } = await readPkgUp()
+    const { packageJson } = await readPackageUp()
 
     // attach our custom methods to the program
     options.program.configureHelp({
-        formatHelp: (cmd: Command) => help(cmd, options, pkg),
+        formatHelp: (cmd: Command) => help(cmd, options, packageJson),
     })
 
     return options.program
