@@ -6,22 +6,22 @@
 import chalk from 'chalk'
 import { Command } from 'commander'
 
-import { RupaOptions } from '../options/interface.js'
 import banner from './banner.js'
 
-export default (cmd: Command, options: RupaOptions): string => {
+export default (cmd: Command, program: Command): string => {
     const helpers = {
+        // op = optional
         dop: (str: string) => `[${str}]`,
-        dre: (str: string) => `<${str}>`,
-        cp: ` `.repeat(options.config.indent.content),
-        sp: ` `.repeat(options.config.indent.subContent),
 
-        arrayToChalk: (str: string, styles: string[]): string => {
-            let style = chalk
-            for (const name of styles.reverse()) style = style[name]
-            return style(str)
-        },
+        // re = required
+        dre: (str: string) => `<${str}>`,
+
+        // cp = content padding
+        cp: ` `.repeat(1),
+
+        // sp = sub-content padding
+        sp: ` `.repeat(3),
     }
 
-    return banner({ cmd, helpers, options })
+    return banner({ program, cmd, helpers })
 }

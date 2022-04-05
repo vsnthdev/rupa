@@ -19,7 +19,7 @@ program.description('A basic demo program to show rupa')
 program.command('run').description('run the basic example')
 
 // attach rupa formatter
-rupa({ program })
+rupa(program)
 
 // parse the command line arguments
 await program.parseAsync(process.argv)

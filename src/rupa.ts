@@ -6,17 +6,12 @@
 import { Command } from 'commander'
 
 import help from './help/index.js'
-import fillOptions from './options/index.js'
-import { RupaOptions } from './options/interface.js'
 
-export default (options: RupaOptions): Command => {
-    // merge options with defaults and validate
-    options = fillOptions(options)
-
+export default (program: Command): Command => {
     // attach our custom methods to the program
-    options.program.configureHelp({
-        formatHelp: (cmd: Command) => help(cmd, options),
+    program.configureHelp({
+        formatHelp: (cmd: Command) => help(cmd, program),
     })
 
-    return options.program
+    return program
 }
