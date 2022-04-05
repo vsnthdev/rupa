@@ -6,20 +6,13 @@
 import merge from 'deepmerge'
 
 import defaults from './defaults.js'
-import { RupaOptions, schema } from './schema.js'
+import { RupaOptions } from './interface.js'
 
-export default async (options: RupaOptions): Promise<RupaOptions> => {
+export default (options: RupaOptions): RupaOptions => {
     if (!options.config) options.config = {}
 
     // merge defaults with given options
     options.config = merge(defaults, options.config)
-
-    // validate options
-    try {
-        await schema.validateAsync(options.config)
-    } catch (err) {
-        throw new Error(`The config key ${err.message}`)
-    }
 
     return options
 }

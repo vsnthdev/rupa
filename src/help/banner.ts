@@ -7,16 +7,15 @@ import chalk from 'chalk'
 import { Command } from 'commander'
 import WrapAnsi from 'wrap-ansi'
 
-import { RupaOptions } from '../options/schema'
+import { RupaOptions } from '../options/interface'
 
 interface BannerArgs {
     cmd: Command
     options: RupaOptions
     helpers: any
-    pkg: any
 }
 
-export default ({ cmd, options, helpers, pkg }: BannerArgs): string => {
+export default ({ cmd, options, helpers }: BannerArgs): string => {
     // pull the helpers we need to render this block
     const { dop, dre, cp, sp, arrayToChalk } = helpers
 
@@ -29,7 +28,7 @@ export default ({ cmd, options, helpers, pkg }: BannerArgs): string => {
     // pull descriptors from package.json
     // make sure it it's width is limited
     const desc = WrapAnsi(
-        (options.program as any)._description || pkg.description,
+        (options.program as any)._description || 'NO DESCRIPTION',
         60,
     )
         .split('\n')

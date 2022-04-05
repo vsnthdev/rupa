@@ -5,7 +5,7 @@
 
 import { Command } from 'commander'
 
-import { RupaOptions } from '../options/schema'
+import { RupaOptions } from '../options/interface'
 
 export default (cmd: Command, options: RupaOptions) => {
     //

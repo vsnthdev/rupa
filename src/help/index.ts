@@ -6,10 +6,10 @@
 import chalk from 'chalk'
 import { Command } from 'commander'
 
-import { RupaOptions } from '../options/schema.js'
+import { RupaOptions } from '../options/interface.js'
 import banner from './banner.js'
 
-export default (cmd: Command, options: RupaOptions, pkg: any): string => {
+export default (cmd: Command, options: RupaOptions): string => {
     const helpers = {
         dop: (str: string) => `[${str}]`,
         dre: (str: string) => `<${str}>`,
@@ -23,5 +23,5 @@ export default (cmd: Command, options: RupaOptions, pkg: any): string => {
         },
     }
 
-    return banner({ cmd, helpers, options, pkg })
+    return banner({ cmd, helpers, options })
 }
