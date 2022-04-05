@@ -23,7 +23,16 @@
         "dev": "tsc --watch",
         "build": "rimraf ./dist && tsc --incremental false"
     },
-    "keywords": [],
+    "keywords": [
+        "cli",
+        "args",
+        "option",
+        "command",
+        "argument",
+        "terminal",
+        "commander",
+        "command-line"
+    ],
     "dependencies": {
         "chalk": "^5.0.1",
         "deepmerge": "^4.2.2",
