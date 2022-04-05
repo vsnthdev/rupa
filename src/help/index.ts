@@ -7,6 +7,7 @@ import { Command } from 'commander'
 
 import banner from './banner.js'
 import commands from './commands.js'
+import options from './options.js'
 
 export default (program: Command, cmd: Command): string => {
     const helpers = {
@@ -26,4 +27,5 @@ export default (program: Command, cmd: Command): string => {
     return ''
         .concat(banner({ helpers, program }))
         .concat(commands({ helpers, program }))
+        .concat(options({ helpers, program }))
 }
