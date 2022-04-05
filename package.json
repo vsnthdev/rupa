@@ -16,6 +16,9 @@
         "type": "git",
         "url": "https://github.com/vasanthdeveloper/rupa.git"
     },
+    "engines": {
+        "node": ">=17.8.0"
+    },
     "scripts": {
         "dev": "tsc --watch",
         "build": "rimraf ./dist && tsc --incremental false"
