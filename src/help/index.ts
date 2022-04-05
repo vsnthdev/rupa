@@ -3,12 +3,12 @@
  *  Created On 13 July 2021
  */
 
-import chalk from 'chalk'
 import { Command } from 'commander'
 
 import banner from './banner.js'
+import commands from './commands.js'
 
-export default (cmd: Command, program: Command): string => {
+export default (program: Command, cmd: Command): string => {
     const helpers = {
         // op = optional
         dop: (str: string) => `[${str}]`,
@@ -23,5 +23,7 @@ export default (cmd: Command, program: Command): string => {
         sp: ` `.repeat(3),
     }
 
-    return banner({ program, cmd, helpers })
+    return ''
+        .concat(banner({ helpers, program }))
+        .concat(commands({ helpers, program }))
 }

@@ -9,13 +9,12 @@ import WrapAnsi from 'wrap-ansi'
 
 interface BannerArgs {
     program: Command
-    cmd: Command
     helpers: any
 }
 
-export default ({ cmd, helpers, program }: BannerArgs): string => {
+export default ({ helpers, program }: BannerArgs): string => {
     // pull the helpers we need to render this block
-    const { dop, dre, cp, sp, arrayToChalk } = helpers
+    const { dop, dre, cp, sp } = helpers
 
     const cmdWrap =
         Boolean((program as any)._actionHandler) == false &&

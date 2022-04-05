@@ -17,6 +17,12 @@ program.description('A basic demo program to show rupa')
 
 // show help if no command is provided
 program.command('run').description('run the basic example')
+program.command('login').description('authenticate with the YouTube API')
+program.command('config').description('reads all config keys & outputs')
+program.command('volumes').description('prints a table of all volumes')
+program
+    .command('videos')
+    .description('prints a table of recently created videos')
 
 // attach rupa formatter
 rupa(program)
