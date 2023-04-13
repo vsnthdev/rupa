@@ -35,11 +35,12 @@
     ],
     "dependencies": {
         "chalk": "^5.2.0",
+        "commander": "~10.0.0",
         "deepmerge": "^4.3.1",
         "wrap-ansi": "^8.1.0"
     },
     "peerDependencies": {
-        "commander": "9.x"
+        "commander": "10.x"
     },
     "devDependencies": {
         "@types/node": "^18.15.11",

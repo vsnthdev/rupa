@@ -5,8 +5,8 @@ dependencies:
     specifier: ^5.2.0
     version: 5.2.0
   commander:
-    specifier: 9.x
-    version: 9.0.0
+    specifier: ~10.0.0
+    version: 10.0.0
   deepmerge:
     specifier: ^4.3.1
     version: 4.3.1
@@ -432,9 +432,9 @@ packages:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: true
 
-  /commander@9.0.0:
-    resolution: {integrity: sha512-JJfP2saEKbQqvW+FI93OYUB4ByV5cizMpFMiiJI8xDbBvQvSkIk0VvQdn1CZ8mqAO8Loq2h0gYTYtDFUZUeERw==}
-    engines: {node: ^12.20.0 || >=14}
+  /commander@10.0.0:
+    resolution: {integrity: sha512-zS5PnTI22FIRM6ylNW8G4Ap0IEOyk62fhLSD0+uHRT9McRCLGpkVNvao4bjimpK/GShynyQkFFxHhwMcETmduA==}
+    engines: {node: '>=14'}
     dev: false
 
   /concat-map@0.0.1:
