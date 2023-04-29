@@ -1,6 +1,5 @@
-<h1 align="center">
-    <code>rupa</code>
-</h1>
+https://user-images.githubusercontent.com/24322511/235310539-8f96addb-3e87-449f-9579-4ca0bab7cf66.mp4
+
 <p align="center"><strong>( रूप ) — An opinionated 🎽 formatter for commander.js with ✨ colored output.</strong></p>
 <p align="center">
     <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/rupa">
