@@ -34,25 +34,25 @@
         "command-line"
     ],
     "dependencies": {
-        "chalk": "^5.2.0",
-        "commander": "~10.0.0",
+        "chalk": "^5.3.0",
+        "commander": "~11.0.0",
         "deepmerge": "^4.3.1",
         "wrap-ansi": "^8.1.0"
     },
     "peerDependencies": {
-        "commander": "10.x"
+        "commander": "11.x"
     },
     "devDependencies": {
-        "@types/node": "^18.15.11",
-        "@typescript-eslint/eslint-plugin": "^5.58.0",
-        "@typescript-eslint/parser": "^5.58.0",
-        "eslint": "^8.38.0",
+        "@types/node": "^20.4.0",
+        "@typescript-eslint/eslint-plugin": "^5.61.0",
+        "@typescript-eslint/parser": "^5.61.0",
+        "eslint": "^8.44.0",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-simple-import-sort": "^10.0.0",
-        "prettier": "^2.8.7",
-        "rimraf": "^5.0.0",
-        "typescript": "^5.0.4"
+        "prettier": "^3.0.0",
+        "rimraf": "^5.0.1",
+        "typescript": "^5.1.6"
     }
 }
