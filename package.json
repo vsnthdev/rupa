@@ -21,6 +21,7 @@
     },
     "scripts": {
         "dev": "tsc --watch",
+        "clean": "rimraf ./dist",
         "build": "rimraf ./dist && tsc --incremental false"
     },
     "keywords": [
