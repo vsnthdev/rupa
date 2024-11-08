@@ -1,7 +1,7 @@
 {
     "name": "rupa",
     "description": "( रूप ) — An opinionated 🎽 formatter for commander.js with ✨ colored output.",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "license": "Zlib",
     "main": "dist/rupa.js",
     "type": "module",
